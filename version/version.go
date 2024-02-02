@@ -5,6 +5,9 @@ import "runtime/debug"
 var version = "UNSTABLE"
 
 func Version() string {
+	if version != "UNSTABLE" {
+		return version
+	}
 	if v, ok := buildInfoVersion(); ok {
 		return v
 	}
